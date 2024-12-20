@@ -4,19 +4,35 @@ int main() {
     PhoneBook phoneBook;
     std::string command;
 
-    while (true) {
+    while (true) 
+    {
         std::cout << "Enter a command (ADD, SEARCH, EXIT): ";
         std::getline(std::cin, command);
-
-        if (command == "ADD") {
-            phoneBook.addContact();
-        } else if (command == "SEARCH") {
-            phoneBook.searchContacts();
-        } else if (command == "EXIT") {
-            break;
-        } else {
-            std::cout << "Invalid command!" << std::endl;
+        
+        if (std::cin.eof())
+        {
+            std::cout << std::endl;
+            break ;
         }
+        if (command == "ADD")
+        {
+            phoneBook.addContact();
+            if (std::cin.eof())
+                break ;
+        }
+        else if (command == "SEARCH")
+        {
+            phoneBook.searchContacts();
+            if (std::cin.eof())
+            {
+                std::cout << std::endl;
+                break ;
+            }
+        }
+        else if (command == "EXIT")
+            break;
+        else
+            std::cout << "Invalid command!" << std::endl;
     }
     return 0;
 }
