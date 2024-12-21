@@ -27,7 +27,8 @@ int Contact::setContact()
     return 0;
 }
 
-void Contact::displayShort(int index) const {
+void Contact::displayShort(int index) const
+{
     std::cout << "|" << std::setw(10) << index << "|";
     printField(firstName);
     printField(lastName);
@@ -35,7 +36,8 @@ void Contact::displayShort(int index) const {
     std::cout << std::endl;
 }
 
-void Contact::displayFull() const {
+void Contact::displayFull() const
+{
     std::cout << "First Name: " << firstName << std::endl;
     std::cout << "Last Name: " << lastName << std::endl;
     std::cout << "Nickname: " << nickName << std::endl;
@@ -43,16 +45,22 @@ void Contact::displayFull() const {
     std::cout << "Darkest Secret: " << darkestSecret << std::endl;
 }
 
-void Contact::printField(const std::string &field) const {
+void Contact::printField(const std::string &field) const
+{
     if (field.length() > 10)
         std::cout << field.substr(0, 9) + ".|";
     else
         std::cout << std::setw(10) << field << "|";
 }
 
-PhoneBook::PhoneBook() : currentIndex(0), contactCount(0) {}
+PhoneBook::PhoneBook()
+{
+    currentIndex = 0;
+    contactCount = 0;
+}
 
-void PhoneBook::addContact() {
+void PhoneBook::addContact()
+{
     if (contacts[currentIndex].setContact() == 1)
         return ;
     currentIndex = (currentIndex + 1) % MAX_CONTACTS;
@@ -68,7 +76,8 @@ int check_input(std::string input)
     return (0);
 }
 
-void PhoneBook::searchContacts() const {
+void PhoneBook::searchContacts() const
+{
     std::cout << "|     Index|First Name| Last Name|  Nickname|" << std::endl;
     std::cout << "---------------------------------------------" << std::endl;
     if (contactCount == 0)

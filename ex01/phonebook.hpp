@@ -8,7 +8,8 @@
 
 #define MAX_CONTACTS 8
 
-class Contact {
+class Contact
+{
 private:
     std::string firstName;
     std::string lastName;
@@ -25,7 +26,8 @@ private:
     void printField(const std::string &field) const;
 };
 
-class PhoneBook {
+class PhoneBook
+{
 private:
     Contact contacts[MAX_CONTACTS];
     int currentIndex;
