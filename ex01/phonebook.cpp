@@ -22,7 +22,7 @@ int Contact::setContact()
     std::getline(std::cin, darkestSecret);
     if (std::cin.eof())
         return (std::cout << std::endl, 1);
-    if (firstName == "" || lastName == "" || nickName == "" || phoneNumber == "" || darkestSecret == " ")
+    if (firstName == "" || lastName == "" || nickName == "" || phoneNumber == "" || darkestSecret == "")
         return (std::cout << "Invalid argument!\n", 1);
     return 0;
 }
